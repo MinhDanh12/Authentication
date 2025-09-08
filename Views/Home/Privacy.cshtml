@@ -1,0 +1,71 @@
+@{
+    ViewData["Title"] = "Chính sách bảo mật";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-info text-white">
+                    <h2 class="mb-0">
+                        <i class="fas fa-shield-alt me-2"></i>Chính sách bảo mật
+                    </h2>
+                </div>
+                <div class="card-body p-4">
+                    <div class="mb-4">
+                        <h4><i class="fas fa-lock me-2"></i>Bảo vệ thông tin cá nhân</h4>
+                        <p>
+                            Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn. Tất cả dữ liệu được mã hóa 
+                            và lưu trữ an toàn theo các tiêu chuẩn bảo mật cao nhất.
+                        </p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4><i class="fas fa-key me-2"></i>Mã hóa mật khẩu</h4>
+                        <p>
+                            Mật khẩu của bạn được mã hóa bằng thuật toán BCrypt, đảm bảo không thể 
+                            đọc được ngay cả khi có quyền truy cập vào cơ sở dữ liệu.
+                        </p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4><i class="fas fa-certificate me-2"></i>JWT Token</h4>
+                        <p>
+                            Hệ thống sử dụng JWT (JSON Web Token) để xác thực, đảm bảo tính bảo mật 
+                            và hiệu suất cao trong việc quản lý phiên đăng nhập.
+                        </p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4><i class="fas fa-clock me-2"></i>Quản lý phiên</h4>
+                        <p>
+                            Phiên đăng nhập được quản lý chặt chẽ với thời gian hết hạn phù hợp. 
+                            Chức năng "Remember Me" sử dụng token an toàn với thời hạn 30 ngày.
+                        </p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4><i class="fas fa-user-shield me-2"></i>Phân quyền người dùng</h4>
+                        <p>
+                            Hệ thống hỗ trợ nhiều loại người dùng với các quyền hạn khác nhau:
+                        </p>
+                        <ul>
+                            <li><strong>End User:</strong> Người dùng cuối</li>
+                            <li><strong>Admin:</strong> Quản trị viên hệ thống</li>
+                            <li><strong>Partner:</strong> Đối tác</li>
+                            <li><strong>Moderator:</strong> Điều hành viên</li>
+                        </ul>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <h5><i class="fas fa-info-circle me-2"></i>Lưu ý quan trọng</h5>
+                        <p class="mb-0">
+                            Đây là một module xác thực mẫu được phát triển cho mục đích học tập và demo. 
+                            Trong môi trường production, cần thêm các biện pháp bảo mật bổ sung.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

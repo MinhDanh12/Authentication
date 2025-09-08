@@ -1,0 +1,95 @@
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Đăng nhập";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+        <div class="card shadow-lg border-0">
+            <div class="card-header bg-primary text-white text-center py-4">
+                <h3 class="mb-0">
+                    <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập
+                </h3>
+                <p class="mb-0 mt-2">Chào mừng bạn quay trở lại!</p>
+            </div>
+            <div class="card-body p-4">
+                <form asp-action="Login" method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                    
+                    <div class="mb-3">
+                        <label asp-for="EmailOrUsername" class="form-label">
+                            <i class="fas fa-envelope me-1"></i>Email hoặc Username
+                        </label>
+                        <input asp-for="EmailOrUsername" class="form-control" placeholder="Nhập email hoặc username" />
+                        <span asp-validation-for="EmailOrUsername" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label">
+                            <i class="fas fa-lock me-1"></i>Mật khẩu
+                        </label>
+                        <div class="input-group">
+                            <input asp-for="Password" class="form-control" placeholder="Nhập mật khẩu" id="password" />
+                            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                <i class="fas fa-eye" id="toggleIcon"></i>
+                            </button>
+                        </div>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input asp-for="RememberMe" class="form-check-input" />
+                        <label asp-for="RememberMe" class="form-check-label">
+                            Ghi nhớ đăng nhập
+                        </label>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập
+                        </button>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model?.ReturnUrl))
+                    {
+                        <input asp-for="ReturnUrl" type="hidden" />
+                    }
+                </form>
+
+                <hr class="my-4">
+                
+                <div class="text-center">
+                    <p class="mb-2">Chưa có tài khoản?</p>
+                    <a asp-action="Register" class="btn btn-outline-primary">
+                        <i class="fas fa-user-plus me-2"></i>Đăng ký ngay
+                    </a>
+                </div>
+
+                <div class="text-center mt-3">
+                    <a asp-action="ForgotPassword" class="text-decoration-none">
+                        <i class="fas fa-key me-1"></i>Quên mật khẩu?
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const password = document.getElementById('password');
+            const toggleIcon = document.getElementById('toggleIcon');
+            
+            if (password.type === 'password') {
+                password.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                password.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        });
+    </script>
+}
