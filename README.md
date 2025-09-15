@@ -204,4 +204,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-**Lưu ý**: Đây là một module xác thực mẫu được phát triển cho mục đích học tập và demo. Trong môi trường production, cần thêm các biện pháp bảo mật bổ sung.
+**Lưu ý**: Đây là một module xác thực mẫu được phát triển cho mục đích học tập và demo.
